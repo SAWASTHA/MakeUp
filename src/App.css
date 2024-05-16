@@ -1,0 +1,33 @@
+.custom-heading {
+    font-size: 3.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.custom-text {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.8em;
+    
+}
+.back{
+    background-color: rgba(238, 238, 238, 0.867);
+}
+.head{
+    font-size: 2.3em;
+}
+.custom-button {
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.rounded-bottom {
+    border-radius: 15px; 
+}
+.icon{
+    font-size: 1.8em;
+}
+.add{
+    font-size: 20px;
+}
+
