@@ -12,7 +12,6 @@ function Home() {
         <CarouselImage/>
         <Collage/>
         <Component/>
-        // eslint-disable-next-line react/jsx-pascal-case
         <Course_Home/>
     </div>
   )

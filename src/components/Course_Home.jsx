@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css'; // Ensure this points to the correct path for your CSS file
 
 export default function Component() {
   return (
     <section className="relative w-full py-24 md:py-32 lg:py-40 bg-[url('https://i.postimg.cc/8c0TVpkc/14.jpg')] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-gray-900/70 dark:bg-gray-800/70" />
       <div className="relative container px-4 md:px-6 text-center space-y-6">
-        <h6 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl playfair-font">
+        <h6 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl ">
           Transform Your Look Today
         </h6>
         

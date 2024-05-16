@@ -6,6 +6,7 @@ import {
   Routes
 } from "react-router-dom";
 import Home from './components/Home'
+import Gallery from './components/Gallery';
 
 
 function App() {
@@ -14,8 +15,9 @@ function App() {
       <Navbar  title="Preet Makeup"/> 
       <Routes>
       <Route exact path='/' element={<Home/>}></Route>
-      
+      <Route exact path='/gallery' element={<Gallery/>}></Route>
       </Routes> 
+      
       <Footer/>
     </div>
   );

@@ -89,3 +89,55 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Manrope', sans-serif;
   }
+
+  .carousel-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+  }
+  
+  .carousel-text-container {
+    position: absolute;
+    top: 40%;
+    left: 70px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 8px;
+  }
+  
+  .carousel-text {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  
+  @media (max-width: 1024px) {
+    .carousel-text-container {
+      left: 50px;
+    }
+    .carousel-text {
+      font-size: 32px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-text-container {
+      top: 35%;
+      left: 30px;
+    }
+    .carousel-text {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carousel-text-container {
+      top: 30%;
+      left: 20px;
+    }
+    .carousel-text {
+      font-size: 18px;
+    }
+  }
+  
