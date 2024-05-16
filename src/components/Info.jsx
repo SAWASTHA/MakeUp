@@ -42,9 +42,7 @@ export default function Component() {
 
   return (
     <div className="about">
-      <div className="flex flex-col space-y-3">
-        {!imageLoaded && <Skeleton className="h-[125px] w-[250px] rounded-xl" />}
-      </div>
+     
       <section className="w-full py-5 md:py-24 lg:py-10 bg-gray-100 dark:bg-gray-800" style={{ backgroundColor: "" }}>
         <div className="container px-4 md:px-6 grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           <div className="flex justify-center animate-fade-in">
