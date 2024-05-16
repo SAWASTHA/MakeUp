@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home'
 import Gallery from './components/Gallery';
+import Contact from './components/Contact';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
       <Route exact path='/' element={<Home/>}></Route>
       <Route exact path='/gallery' element={<Gallery/>}></Route>
+      <Route exact path='/contact' element={<Contact/>}></Route>
       </Routes> 
       
       <Footer/>

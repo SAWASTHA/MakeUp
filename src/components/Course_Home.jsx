@@ -22,7 +22,7 @@ export default function Component() {
           </Link>
           <Link
             className="inline-flex h-10 items-center justify-center rounded-md border border-[#ff6b6b] bg-transparent px-8 text-sm font-medium text-[#ff6b6b] shadow-sm transition-colors hover:bg-[#ff6b6b]/10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#ff6b6b] disabled:pointer-events-none disabled:opacity-50"
-            to="#"
+            to="/contact"
           >
             Contact Us
           </Link>
