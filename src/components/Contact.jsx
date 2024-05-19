@@ -8,16 +8,16 @@ import { AiOutlineYoutube } from "react-icons/ai";
 
 export default function Contact() {
   return (
-    <div className="my-2 gradient_background">
-      <div className="row  p-3">
-        <div className="col-12 col-md-6 my-2 mx-3">
+    <div className="my-2 background">
+      <div className="row p-3">
+        <div className="col-12 col-md-7 my-2 mx-3">
           <span className="custom-heading">Get in Touch</span>
           <span className="custom-text">
             Have a question or want to work together? Fill out the form and I'll
             get back to you as soon as possible.
           </span>
         </div>
-        <div className="col-12 col-md-5 my-2 bg-light mx-1 p-5 rounded-bottom">
+        <div className="col-12 col-md-4 my-2 mx-1 p-5 rounded-bottom" style={{ backgroundColor: "rgba(255, 255, 255, 0.8)" }}>
           <form>
             <div className="mb-3 my-2">
               <label htmlFor="name" className="form-label">
@@ -68,7 +68,7 @@ export default function Contact() {
                 <span className="me-2 icon">
                     <IoLocationOutline />
                 </span>
-                <h2 className="mb-0 add" >
+                <h2 className="mb-0 add">
                     Preet Makeover, Sangram Nagar, Aurangabad, Maharashtra-431005
                 </h2>
             </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                 <span className="me-2 icon">
                     <IoCallOutline /> 
                 </span>
-                <h2 className="mb-0 add" >
+                <h2 className="mb-0 add">
                    +91 9146585763
                 </h2>
             </div>
@@ -84,7 +84,7 @@ export default function Contact() {
                 <span className="me-2 icon">
                 <IoMailOutline />
                 </span>
-                <h2 className="mb-0 add" >
+                <h2 className="mb-0 add">
                   mailto:rohit98waghmare@gmail.com
                 </h2>
             </div>

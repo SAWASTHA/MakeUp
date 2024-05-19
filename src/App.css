@@ -2,12 +2,14 @@
     font-size: 3.8em;
     font-weight: bold;
     margin-bottom: 10px;
+    
 }
 
 .custom-text {
     display: block;
     margin-top: 10px;
     font-size: 1.8em;
+    
     
 }
 .back{
@@ -29,5 +31,9 @@
 }
 .add{
     font-size: 20px;
+}
+.background{
+    background-image: url("./images/back.jpg");
+    background-color: rgba(255, 255, 255, 0.8)
 }
 
