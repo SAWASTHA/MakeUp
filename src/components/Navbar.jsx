@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { Icons } from "./ui/icons";
@@ -13,7 +13,7 @@ import {
 } from "./ui/navigation-menu";
 import { ButtonIcon } from "./darkModeButton";
 import { ComboboxDemo } from './PhoneMenu';
-// import { Signin } from  './Signin'
+import { Signin } from  './Signin'
 
 const components = [
   {
@@ -54,15 +54,15 @@ const components = [
 ];
 
 export default function NavbarComponent() {
-  // const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  // const handleSignInClick = () => {
-  //   setShowModal(!showModal);
-  // };
+  const handleSignInClick = () => {
+    setShowModal(!showModal);
+  };
 
-  // const handleCloseModal = () => {
-  //   setShowModal(false);
-  // };
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <header className="flex items-center justify-between w-full p-4 sm:px-6">
@@ -149,17 +149,17 @@ export default function NavbarComponent() {
               </Link>
             </NavigationMenuItem>
 
-            {/* <NavigationMenuItem className="flex items-center justify-center">
+            <NavigationMenuItem className="flex items-center justify-center">
               <button
                 onClick={handleSignInClick}
                 className={navigationMenuTriggerStyle()}
               >
                 Signin
               </button>
-            </NavigationMenuItem> */}
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        {/* {showModal && <Signin showModal={showModal} handleCloseModal={handleCloseModal} />} */}
+        {showModal && <Signin showModal={showModal} handleCloseModal={handleCloseModal} />}
         
       </nav>
       <div className="mx-4" style={{ width: "100px" }}></div>

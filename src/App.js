@@ -19,7 +19,6 @@ function App() {
       <Route exact path='/gallery' element={<Gallery/>}></Route>
       <Route exact path='/contact' element={<Contact/>}></Route>
       </Routes> 
-      
       <Footer/>
     </div>
   );

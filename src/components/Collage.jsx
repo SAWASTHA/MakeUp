@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import { Skeleton } from "./ui/skeleton";
 import { Link } from "react-router-dom";
@@ -101,19 +102,13 @@ export default function Collage() {
           />
         </div>
       </div>
-      <div className="flex justify-center mb-4">
-        <div className="flex justify-center">
-          {/* <Button size="lg" className="bg-transparent text-blue-500 hover:text-blue-700 font-bold py-3 px-6 rounded-full border border-blue-500 hover:border-blue-700">
-    View More
-  </Button> */}
-          <Link
-            className="bg-transparent text-blue-500 hover:text-blue-700 font-bold py-3 px-6 rounded-full border border-blue-500 hover:border-blue-700"
-            to="/gallery"
-          >
-            {" "}
-            View More
-          </Link>
-        </div>
+      <div className="flex justify-end mb-4">
+        <Link
+          className="bg-transparent text-blue-500 hover:text-blue-700 font-bold py-2 px-6 rounded-full"
+          to="/gallery"
+        >
+          View More
+        </Link>
       </div>
     </div>
   );
