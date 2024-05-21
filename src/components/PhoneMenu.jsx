@@ -19,7 +19,6 @@ export function ComboboxDemo() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
   const [showModal, setShowModal] = React.useState(false);
-  const [isDarkMode] = React.useState(false);
 
   const handleSignInClick = () => {
     setShowModal(true);
@@ -55,7 +54,7 @@ export function ComboboxDemo() {
                   onClick={handleSignInClick}
                   className={cn(
                     "flex items-start px-4 py-2 cursor-pointer",
-                    value === framework.value && "bg-gray-200 text-black"
+                    value === framework.value && "bg-gray-800 text-white"
                   )}
                 >
                   {framework.label}
@@ -70,7 +69,7 @@ export function ComboboxDemo() {
                   }}
                   className={cn(
                     "flex items-center px-4 py-2 cursor-pointer",
-                    value === framework.value ? "bg-gray-200 text-black" : (isDarkMode ? "text-white" : "text-black")
+                    value === framework.value    
                   )}
                 >
                   {framework.label}

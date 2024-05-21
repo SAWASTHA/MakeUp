@@ -94,7 +94,7 @@ function CourseDetails({
   );
 }
 
-export default function Component() {
+export default function Course() {
   const courses = [
     {
       imageSrc:

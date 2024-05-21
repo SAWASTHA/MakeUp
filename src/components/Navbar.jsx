@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { Icons } from "./ui/icons";
@@ -12,8 +12,8 @@ import {
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
 import { ButtonIcon } from "./darkModeButton";
-import { ComboboxDemo } from './PhoneMenu';
-import { Signin } from  './Signin'
+import { ComboboxDemo } from "./PhoneMenu";
+import { Signin } from "./Signin";
 
 const components = [
   {
@@ -23,8 +23,8 @@ const components = [
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Courses",
+    href: "/course",
     description:
       "For sighted users to preview content available behind a link.",
   },
@@ -90,7 +90,7 @@ export default function NavbarComponent() {
                         to="/"
                       >
                         <Icons.Logo className="h-6 w-6" />
-                        <div class="mb-2 mt-4 text-lg font-medium">
+                        <div className="mb-2 mt-4 text-lg font-medium">
                           shadcn/ui
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
@@ -160,7 +160,6 @@ export default function NavbarComponent() {
           </NavigationMenuList>
         </NavigationMenu>
         {showModal && <Signin showModal={showModal} handleCloseModal={handleCloseModal} />}
-        
       </nav>
       <div className="mx-4" style={{ width: "100px" }}></div>
       <div className="sm:hidden mx-2">
@@ -174,11 +173,12 @@ export default function NavbarComponent() {
 }
 
 const ListItem = React.forwardRef(
-  ({ className, title, children, ...props }, ref) => (
+  ({ className, title, children, href, ...props }, ref) => (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
+          to={href}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
@@ -189,7 +189,7 @@ const ListItem = React.forwardRef(
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   )

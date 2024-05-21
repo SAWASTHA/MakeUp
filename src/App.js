@@ -8,6 +8,7 @@ import {
 import Home from './components/Home'
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
+import Course from './components/Courses';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route exact path='/' element={<Home/>}></Route>
       <Route exact path='/gallery' element={<Gallery/>}></Route>
       <Route exact path='/contact' element={<Contact/>}></Route>
+      <Route exact path='/course' element={<Course/>}></Route>
       </Routes> 
       <Footer/>
     </div>
