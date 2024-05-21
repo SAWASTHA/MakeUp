@@ -30,10 +30,13 @@
 .add{
     font-size: 20px;
 }
-.background{
-    background-image: url("./images/back.jpg");
-    background-color: rgba(255, 255, 255, 0.8)
-}
 
-
-
+.contact-page {
+    background-image: url('https://img.freepik.com/free-photo/makeup-cosmetic-products-collection-with-copy-space_23-2148301789.jpg?t=st=1716304817~exp=1716308417~hmac=d4470c6245d6801e560ddc74dbd5566ac967866abd6f62913d796f33ab9d8779&w=900');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+  
+  
