@@ -11,8 +11,8 @@ export default function CarouselImage() {
 
   const images = [
     "https://firebasestorage.googleapis.com/v0/b/medimate-6e21c.appspot.com/o/new.jpg?alt=media&token=e3792b3d-443a-4c7d-bcdd-8a1e1acbb622",
-    "https://firebasestorage.googleapis.com/v0/b/medimate-6e21c.appspot.com/o/neww.jpg?alt=media&token=475fa6e3-33fb-44c6-960a-91fff01eee4c",
-    "https://firebasestorage.googleapis.com/v0/b/medimate-6e21c.appspot.com/o/12.jpg?alt=media&token=d669c449-ac7f-420a-ac48-5725050972c1"
+    "https://img.freepik.com/free-photo/make-up-artist-woman-looking-mirror-applying-contouring_23-2148332531.jpg?t=st=1716307459~exp=1716311059~hmac=1aec59a66fa4af4b7922ccf637fd63eaa4085088f9c59852c93b654f868f4bb0&w=900",
+    "https://firebasestorage.googleapis.com/v0/b/medimate-6e21c.appspot.com/o/carou2.jpg?alt=media&token=e4c9df66-2fdb-4385-90cb-116d36866198"
   ];
 
   const txt = "Makeup Artists";
@@ -62,14 +62,14 @@ export default function CarouselImage() {
                     className="w-full h-[300px] md:h-[500px] object-cover shadow-1-strong rounded"
                   />
                 )}
-                <div className="carousel-text-container absolute inset-0 flex flex-col justify-center items-center">
+                <div className="carousel-text-container absolute inset-0 flex flex-col justify-center items-start p-4 md:p-8">
                   {texts[index].split("\n").map((text, textIndex) => (
                     <motion.span
                       key={textIndex}
                       initial={{ opacity: 0, x: -100 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: textIndex * 0.1 }}
-                      className="carousel-text text-white text-center"
+                      className="carousel-text text-white text-left"
                     >
                       {text}
                     </motion.span>
