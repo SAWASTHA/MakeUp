@@ -1,5 +1,7 @@
 import { Button } from "./ui/button";
 import { DialogTrigger, DialogContent, Dialog } from "./ui/dialog";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
 
 function CourseCard({ imageSrc, title, description, duration, price, learn }) {
   return (
@@ -27,11 +29,11 @@ function CourseCard({ imageSrc, title, description, duration, price, learn }) {
         </div>
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-gray-50 shadow  hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900   mt-3">
+            <Button className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-gray-50 shadow hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 mt-3">
               Learn More
             </Button>
           </DialogTrigger>
-          <DialogContent className="w-fullp-6">
+          <DialogContent className="max-w-4xl w-full p-6 max-h-screen overflow-y-auto">
             <CourseDetails
               title={title}
               description={description}
@@ -63,32 +65,53 @@ function CourseDetails({
         className="h-64 w-full rounded-t-lg object-cover"
         style={{ aspectRatio: "400/300", objectFit: "cover" }}
       />
-      <div className="">
-        <h3 className="text-xl font-bold">{title}</h3>
-        <p>{description}</p>
-        <div className="flex items-center space-x-2 mt-2">
-          <ClockIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-          <p className="text-gray-500 dark:text-gray-400">
-            Duration: {duration}
-          </p>
+      <div className="flex flex-col md:flex-row space-x-0 md:space-x-8">
+        <div className="data flex-1">
+          <h3 className="text-xl font-bold">{title}</h3>
+          <p>{description}</p>
+          <div className="flex items-center space-x-2 mt-2">
+            <ClockIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+            <p className="text-gray-500 dark:text-gray-400">
+              Duration: {duration}
+            </p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <TagIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+            <p className="text-gray-500 dark:text-gray-400">Price: {price}</p>
+          </div>
+          <div>
+            <h4 className="text-lg font-medium mt-3">What You'll Learn</h4>
+            <ul className="list-disc space-y-2 pl-4 text-gray-500 dark:text-gray-400">
+              {learn.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="flex items-center space-x-2">
-          <TagIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-          <p className="text-gray-500 dark:text-gray-400">Price: {price}</p>
-        </div>
-      </div>
-
-      <div>
-        <h4 className="text-lg font-medium">What You'll Learn</h4>
-        <ul className="list-disc space-y-2 pl-4 text-gray-500 dark:text-gray-400">
-          {learn.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="flex justify-end gap-2">
-        <Button>Buy Now</Button>
+        <form className="space-y-4 md:w-1/3 w-full bg-gray-100 p-6 rounded-lg shadow-md">
+          <div className="grid gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" placeholder="Enter your name" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="number">Phone Number</Label>
+              <Input
+                id="number"
+                placeholder="Enter your phone number"
+                type="tel"
+              />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="amount">Amount</Label>
+            <Input id="amount" placeholder="Enter the amount" type="number" />
+          </div>
+          <div className="flex justify-end gap-2">
+            <Button variant="outline">Cancel</Button>
+            <Button>Pay Now</Button>
+          </div>
+        </form>
       </div>
     </div>
   );
@@ -163,10 +186,25 @@ export default function Course() {
       duration: "8 weeks",
       price: "$499",
       learn: [
-        "Foundation application",
-        "Eyeshadow techniques",
-        "Contouring and highlighting",
-        "Lip color application",
+        "Foundation selection",
+        "Application techniques",
+        "Color matching",
+        "Setting and finishing",
+      ],
+    },
+    {
+      imageSrc:
+        "https://img.freepik.com/free-photo/beautiful-woman-with-colorful-makeup_23-2148398654.jpg?t=st=1716137331~exp=1716140931~hmac=0272dc4b541e29d72be6ad0ff6e99e74ba4a4729bff2e86c1be019be1e998ad6&w=826",
+      title: "Advanced Makeup Techniques",
+      description:
+        "Take your makeup skills to the next level with our advanced techniques.",
+      duration: "8 weeks",
+      price: "$499",
+      learn: [
+        "Advanced blending",
+        "Cut crease eyeshadow",
+        "Baking and setting",
+        "Creative makeup application",
       ],
     },
   ];
