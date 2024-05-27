@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "./ui/card";
@@ -9,11 +8,11 @@ import { Skeleton } from "./ui/skeleton";
 export default function CarouselImage() {
   const plugin = React.useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
 
-  const images = [
+  const images = React.useMemo(() => [
     "https://firebasestorage.googleapis.com/v0/b/medimate-6e21c.appspot.com/o/new.jpg?alt=media&token=e3792b3d-443a-4c7d-bcdd-8a1e1acbb622",
     "https://img.freepik.com/free-photo/make-up-artist-woman-looking-mirror-applying-contouring_23-2148332531.jpg?t=st=1716307459~exp=1716311059~hmac=1aec59a66fa4af4b7922ccf637fd63eaa4085088f9c59852c93b654f868f4bb0&w=900",
     "https://firebasestorage.googleapis.com/v0/b/medimate-6e21c.appspot.com/o/carou2.jpg?alt=media&token=e4c9df66-2fdb-4385-90cb-116d36866198"
-  ];
+  ], []);
 
   const txt = "Makeup Artists";
   const texts = [
@@ -56,6 +55,7 @@ export default function CarouselImage() {
                   </div>
                 )}
                 {loadedImages[index] && (
+                  // eslint-disable-next-line jsx-a11y/img-redundant-alt
                   <img
                     src={image}
                     alt={`Carousel Image ${index + 1}`}

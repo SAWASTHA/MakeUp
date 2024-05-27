@@ -57,12 +57,12 @@ export default function Component() {
             />
           </div>
           <div className="space-y-4 lg:space-y-6 animate-fade-in-up delay-100">
-            {/* <RevealOnScroll> */}
+            <RevealOnScroll>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Enhance your makeup skills with PreetMakeup
               </h2>
-            {/* </RevealOnScroll> */}
-            {/* <RevealOnScroll> */}
+            </RevealOnScroll>
+            <RevealOnScroll>
               <p className="text-gray-500 dark:text-gray-400 text-lg md:text-xl text-justify">
                 Based in Maharashtra, Aurangabad, PreetMakeup offers professional
                 makeup artist services and courses to elevate your makeup skills.
@@ -70,8 +70,8 @@ export default function Component() {
                 pursue a career in makeup artistry, trust PreetMakeup for all your
                 makeup needs.
               </p>
-            {/* </RevealOnScroll> */}
-            {/* <RevealOnScroll> */}
+            </RevealOnScroll>
+            <RevealOnScroll>
               <p className="text-gray-500 dark:text-gray-400 text-lg md:text-xl text-justify">
                 At PreetMakeup, we offer a range of professional makeup courses
                 designed to help you master various makeup techniques. Whether you
@@ -79,7 +79,7 @@ export default function Component() {
                 makeup artist aiming to refine your skills, our courses provide
                 comprehensive knowledge and hands-on training.
               </p>
-            {/* </RevealOnScroll> */}
+            </RevealOnScroll>
           </div>
         </div>
       </section>

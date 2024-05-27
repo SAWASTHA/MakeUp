@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { Icons } from "./ui/icons";
@@ -14,6 +14,8 @@ import {
 import { ButtonIcon } from "./darkModeButton";
 import { ComboboxDemo } from "./PhoneMenu";
 import { Signin } from "./Signin";
+import { Profile } from "./Profile";
+import { UserContext } from './context/UserContext';
 
 const components = [
   {
@@ -55,6 +57,7 @@ const components = [
 
 export default function NavbarComponent() {
   const [showModal, setShowModal] = useState(false);
+  const { user } = useContext(UserContext); // Use UserContext
 
   const handleSignInClick = () => {
     setShowModal(!showModal);
@@ -66,7 +69,6 @@ export default function NavbarComponent() {
 
   return (
     <header className="flex items-center justify-between w-full p-4 sm:px-6">
-      {/* Website title */}
       <div className="ml-2 sm:ml-4">
         <Link
           to="/"
@@ -100,7 +102,6 @@ export default function NavbarComponent() {
                       </Link>
                     </NavigationMenuLink>
                   </li>
-                  {/* List items */}
                   <ListItem href="/docs" title="Introduction">
                     Reusable components built using Radix UI and Tailwind CSS.
                   </ListItem>
@@ -117,12 +118,10 @@ export default function NavbarComponent() {
               </NavigationMenuContent>
             </NavigationMenuItem>
 
-            {/* Components menu */}
             <NavigationMenuItem>
               <NavigationMenuTrigger>Services</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {/* Components */}
                   {components.map((component) => (
                     <ListItem
                       key={component.title}
@@ -136,7 +135,6 @@ export default function NavbarComponent() {
               </NavigationMenuContent>
             </NavigationMenuItem>
 
-            {/* Navigation Links */}
             <NavigationMenuItem>
               <Link to="/gallery" className={navigationMenuTriggerStyle()}>
                 Gallery
@@ -149,14 +147,16 @@ export default function NavbarComponent() {
               </Link>
             </NavigationMenuItem>
 
-            <NavigationMenuItem className="flex items-center justify-center">
-              <button
-                onClick={handleSignInClick}
-                className={navigationMenuTriggerStyle()}
-              >
-                Signin
-              </button>
-            </NavigationMenuItem>
+            {!user.name && (
+              <NavigationMenuItem className="flex items-center justify-center">
+                <button
+                  onClick={handleSignInClick}
+                  className={navigationMenuTriggerStyle()}
+                >
+                  Signin
+                </button>
+              </NavigationMenuItem>
+            )}
           </NavigationMenuList>
         </NavigationMenu>
         {showModal && <Signin showModal={showModal} handleCloseModal={handleCloseModal} />}
@@ -165,6 +165,7 @@ export default function NavbarComponent() {
       <div className="sm:hidden mx-2">
         <ComboboxDemo />
       </div>
+      {user.name && <Profile />}
       <div>
         <ButtonIcon />
       </div>
