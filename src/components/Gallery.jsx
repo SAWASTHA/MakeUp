@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { Skeleton } from "./ui/skeleton";
+import transition from "../transaction";
 
-export default function Gallery() {
+function Gallery() {
   const [activeTab, setActiveTab] = useState("all");
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
@@ -459,3 +460,4 @@ export default function Gallery() {
     </Tabs>
   );
 }
+export default transition(Gallery);

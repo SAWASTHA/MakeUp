@@ -9,7 +9,7 @@ import '../App.css';
 
 export default function Footer() {
     const { isDarkMode } = useDarkMode();
-    const bgColor = isDarkMode ? 'bg-dark' : 'bg-light';
+    const bgColor = isDarkMode ? 'bg-black' : 'bg-light';
     const textColor = isDarkMode ? 'text-light' : 'text-dark';
 
     return (

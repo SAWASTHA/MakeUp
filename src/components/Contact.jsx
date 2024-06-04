@@ -2,7 +2,8 @@ import { IoLocationOutline, IoCallOutline, IoMailOutline } from "react-icons/io5
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 import { AiOutlineYoutube } from "react-icons/ai";
-export default function Contact() {
+import transition from "../transaction";
+function Contact() {
   return (
     <>
     <div className="contact-page ">
@@ -97,3 +98,5 @@ export default function Contact() {
     </>
   )
 }
+
+export default  transition(Contact);

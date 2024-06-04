@@ -5,6 +5,7 @@ import Component  from './Info';
 import Collage from './Collage';
 import Course_Home from './Course_Home';
 import CarouselImage from './Carousel';
+import transition from '../transaction';
 
 function Home() {
   return (
@@ -17,4 +18,4 @@ function Home() {
   )
 }
 
-export default Home
+export default transition(Home);

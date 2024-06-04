@@ -22,20 +22,20 @@ export default function Component() {
   const isInView = useInView(contentRef);
 
   return (
-    <section ref={container} className="relative w-full py-24  overflow-hidden">
+    <section ref={container} className="relative w-full py-24 overflow-hidden" style={{maxHeight : '450px'}}>
       <motion.div
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          height: '600px',
+          height: '500px',
           transform: backgroundTransform,
           opacity: backgroundOpacity,
         }}
         className="absolute inset-0"
       />
-      <div className="absolute inset-0 bg-gray-900/65 dark:bg-gray-800/70" />
+      <div className="absolute inset-0 bg-black-700/65 dark:bg-gray-800/70" />
       <motion.div
         ref={contentRef}
         style={{ transform: contentTransform }}

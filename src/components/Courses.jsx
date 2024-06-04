@@ -5,6 +5,7 @@ import { DialogTrigger, DialogContent, Dialog } from "./ui/dialog";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import axios from "axios";
+import transition from "../transaction";
 
 function CourseCard({ imageSrc, title, description, duration, price, learn }) {
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
@@ -164,7 +165,7 @@ function CourseDetails({
   );
 }
 
-export default function Course() {
+function Course() {
   const courses = [
     {
       imageSrc:
@@ -309,3 +310,5 @@ function TagIcon(props) {
     </svg>
   );
 }
+
+export default transition(Course);
