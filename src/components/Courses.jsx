@@ -83,15 +83,15 @@ function CourseDetails({
   const handlePayment=(e)=>{
     e.preventDefault();
     // setLoading2(true);
-    axios.post('api/payment',{...data}).then(res=>{
-      setTimeout(()=>{
-        // setLoading2(false);
-      },1500);
-    })
-    .catch(error=>{
-      // setLoading2(false);
-      console.log(error);
-    });
+    // axios.post('api/payment',{...data}).then(res=>{
+    //   setTimeout(()=>{
+    //     // setLoading2(false);
+    //   },1500);
+    // })
+    // .catch(error=>{
+    //   // setLoading2(false);
+    //   console.log(error);
+    // });
   }
 
   return (
@@ -155,7 +155,7 @@ function CourseDetails({
               </Button>
             </div>
             <div className="flex-1 ml-2">
-              <Button onClick={handlePayment} className="w-full">Pay Now</Button>
+              <Button onClick={handlePayment} className="bg-white"><p className="font-bold text-black">Coming Soon</p></Button>
             </div>
           </div>
         </form>

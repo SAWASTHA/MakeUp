@@ -2,11 +2,11 @@ import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "./ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Skeleton } from "./ui/skeleton";
 
 export default function CarouselImage() {
-  const plugin = React.useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+  const plugin = React.useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
   const images = React.useMemo(() => [
     "https://firebasestorage.googleapis.com/v0/b/medimate-6e21c.appspot.com/o/new.jpg?alt=media&token=e3792b3d-443a-4c7d-bcdd-8a1e1acbb622",
@@ -43,7 +43,7 @@ export default function CarouselImage() {
   }, [images]);
 
   return (
-    <Carousel plugins={[plugin.current]} className="w-full max-w-screen">
+    <Carousel plugins={[plugin.current]} className="w-full max-w-screen pb-3">
       <CarouselContent className="flex">
         {images.map((image, index) => (
           <CarouselItem key={index} className="flex-shrink-0 relative w-full md:w-1/3">
@@ -64,15 +64,7 @@ export default function CarouselImage() {
                 )}
                 <div className="carousel-text-container absolute inset-0 flex flex-col justify-center items-start p-4 md:p-8">
                   {texts[index].split("\n").map((text, textIndex) => (
-                    <motion.span
-                      key={textIndex}
-                      initial={{ opacity: 0, x: -100 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: textIndex * 0.1 }}
-                      className="carousel-text text-white text-left"
-                    >
-                      {text}
-                    </motion.span>
+                    <InViewAnimateText key={textIndex} text={text} delay={textIndex * 0.1} />
                   ))}
                 </div>
               </CardContent>
@@ -83,3 +75,29 @@ export default function CarouselImage() {
     </Carousel>
   );
 }
+
+const InViewAnimateText = ({ text, delay }) => {
+  const ref = React.useRef(null);
+  const [animationKey, setAnimationKey] = React.useState(0);
+
+  const inView = useInView(ref, { triggerOnce: false });
+
+  React.useEffect(() => {
+    if (inView) {
+      setAnimationKey(prevKey => prevKey + 1);
+    }
+  }, [inView]);
+
+  return (
+    <motion.span
+      key={animationKey}
+      ref={ref}
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay }}
+      className="carousel-text text-white text-left"
+    >
+      {text}
+    </motion.span>
+  );
+};

@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState,useContext } from "react";
 import '../App.css';
 import { Skeleton } from "./ui/skeleton";
+import image from '../images/preeti2.jpg';
+import { DarkModeContext } from './context/DarkModeContext';
 
 const RevealOnScroll = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,19 +41,20 @@ export default function Component() {
   const handleImageLoad = () => {
     setImageLoaded(true);
   };
+  const { isDarkMode } = useContext(DarkModeContext);
 
   return (
-    <div className="about">
+    <div className="about ">
      
-      <section className="w-full py-5 md:py-24 lg:py-10 bg-gray-100 dark:bg-gray-800" style={{ backgroundColor: "" }}>
+      <section className="w-full py-5 md:py-24 lg:py-10 bg-gray-100 dark:bg-gray-800" style={{  }}>
         <div className="container px-4 md:px-6 grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           <div className="flex justify-center animate-fade-in">
             {!imageLoaded && <Skeleton className="h-[600px] w-[500px] rounded-xl" />}
             <img
               alt="Makeup Artist"
-              className={`w-full max-w-[400px] lg:max-w-none aspect-[5/6] object-cover rounded-xl ${imageLoaded ? 'block' : 'hidden'}`}
-              height={600}
-              src="https://i.postimg.cc/BZR8G5T6/2.jpg"
+              className={`w-full max-w-[400px] lg:max-w-none aspect-[5/6] object-contain rounded-xl ${imageLoaded ? 'block' : 'hidden'}`}
+              maxHeight={6000}
+              src={image}
               width={500}
               onLoad={handleImageLoad}
             />
