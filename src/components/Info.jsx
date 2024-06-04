@@ -46,7 +46,7 @@ export default function Component() {
   return (
     <div className="about ">
      
-      <section className="w-full py-5 md:py-24 lg:py-10 bg-gray-100 dark:bg-gray-800" style={{  }}>
+      <section className="w-full py-5 md:py-24 lg:py-10 " style={{  }}>
         <div className="container px-4 md:px-6 grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           <div className="flex justify-center animate-fade-in">
             {!imageLoaded && <Skeleton className="h-[600px] w-[500px] rounded-xl" />}

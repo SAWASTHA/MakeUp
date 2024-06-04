@@ -11,7 +11,7 @@ export default function Contact() {
           <div className="flex flex-col items-center space-y-2 text-center">
             <div className="space-y-2 my-5">
               <h1 className="text-3xl  text-black font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">Get in Touch</h1>
-              <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+              <p className="mx-auto max-w-[700px] text-dark md:text-xl ">
                 Have a question or want to book an appointment? Fill out the form below or reach out to us directly.
               </p>
             </div>

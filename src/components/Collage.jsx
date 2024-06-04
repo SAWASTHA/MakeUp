@@ -19,7 +19,7 @@ export default function Collage() {
   };
 
   return (
-    <div style={{ overflow: "hidden" ,backgroundColor: isDarkMode ? "black" : "white" }}>
+    <div style={{ overflow: "hidden"  }}>
       <div className="row mx-2">
         <motion.div className="col-lg-4 col-md-12 mb-2" style={{ y: colOneTranslate}}>
           <div className="flex flex-col mb-2">
@@ -62,6 +62,9 @@ export default function Collage() {
       </div>
 
       <div className="row mx-2">
+      <h2 className="text-2xl font-bold tracking-tighter sm:text-4xl md:text-4xl text-center mb-5">
+      Take a look at my work
+              </h2>
         <motion.div className="col-lg-4 col-md-12 mb-2" style={{ y: colOneTranslate }}>
           <img
             src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/c1.jpg?alt=media&token=61abd7ed-a887-4e97-a8aa-ca6a077dc46e"
@@ -69,7 +72,7 @@ export default function Collage() {
             onLoad={handleImageLoad}
           />
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/c4.jpg?alt=media&token=e15c7aae-fb54-46a0-88ea-3562f73a25dc"
+            src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/cc4.jpg?alt=media&token=43ae79ea-1c62-4616-982f-76dc2226653b"
             className="w-100 shadow-1-strong rounded mb-4"
             onLoad={handleImageLoad}
           />
@@ -102,7 +105,7 @@ export default function Collage() {
         </motion.div>
       </div>
 
-      <div className="flex justify-end mb-4">
+      <div className="flex justify-end mb-5">
         <Link className="bg-transparent text-blue-500 font-bold px-3" to="/gallery">
           View More
         </Link>
