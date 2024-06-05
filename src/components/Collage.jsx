@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Skeleton } from "./ui/skeleton";
 import { Link } from "react-router-dom";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { DarkModeContext } from './context/DarkModeContext';
 
 export default function Collage() {
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -12,7 +11,6 @@ export default function Collage() {
   const colOneTranslate = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const colTwoTranslate = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const colThreeTranslate = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const { isDarkMode } = useContext(DarkModeContext);
 
   const handleImageLoad = () => {
     setImagesLoaded(true);

@@ -1,12 +1,15 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import { IoLocationOutline, IoCallOutline, IoMailOutline } from "react-icons/io5";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 import { AiOutlineYoutube } from "react-icons/ai";
 import transition from "../transaction";
+
+
 function Contact() {
   return (
     <>
-    <div className="contact-page ">
+      <div className="contact-page ">
       <section className="w-full ">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-2 text-center">
@@ -96,7 +99,9 @@ function Contact() {
       </section>
       </div>
     </>
-  )
+  );
 }
 
-export default  transition(Contact);
+
+
+export default transition(Contact);
