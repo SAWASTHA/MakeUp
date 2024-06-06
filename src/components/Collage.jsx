@@ -19,7 +19,10 @@ export default function Collage() {
   return (
     <div style={{ overflow: "hidden" }}>
       <div className="row mx-2">
-        <motion.div className="col-12 col-lg-4 mb-2" style={{ y: colOneTranslate }}>
+        <motion.div
+          className="col-12 col-lg-4 mb-2"
+          style={{ y: colOneTranslate }}
+        >
           <div className="flex flex-col mb-2">
             {!imagesLoaded && (
               <Skeleton className="h-[355px] w-[250px] w-100 shadow-1-strong rounded mb-4" />
@@ -32,7 +35,10 @@ export default function Collage() {
           </div>
         </motion.div>
 
-        <motion.div className="col-12 col-lg-4 mb-4 mb-lg-0" style={{ y: colTwoTranslate }}>
+        <motion.div
+          className="col-12 col-lg-4 mb-4 mb-lg-0"
+          style={{ y: colTwoTranslate }}
+        >
           <div className="flex flex-col space-y-3 mb-2">
             {!imagesLoaded && (
               <Skeleton className="h-[400px] w-[250px] w-100 shadow-1-strong rounded mb-4" />
@@ -45,7 +51,10 @@ export default function Collage() {
           </div>
         </motion.div>
 
-        <motion.div className="col-12 col-lg-4" style={{ y: colThreeTranslate }}>
+        <motion.div
+          className="col-12 col-lg-4"
+          style={{ y: colThreeTranslate }}
+        >
           <div className="flex flex-col space-y-3 mb-2">
             {!imagesLoaded && (
               <Skeleton className="h-[355px] w-[250px] w-100 shadow-1-strong rounded mb-4" />
@@ -60,10 +69,10 @@ export default function Collage() {
       </div>
 
       <div className="row mx-2">
-        <h2 className="text-2xl font-bold tracking-tighter sm:text-4xl md:text-4xl text-center mb-5">
-          Take a look at my work
-        </h2>
-        <motion.div className="col-12 col-lg-4 mb-2" style={{ y: colOneTranslate }}>
+        <motion.div
+          className="col-12 col-lg-4 mb-2"
+          style={{ y: colOneTranslate }}
+        >
           <img
             src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/c1.jpg?alt=media&token=61abd7ed-a887-4e97-a8aa-ca6a077dc46e"
             className="w-100 shadow-1-strong rounded mb-4"
@@ -76,7 +85,10 @@ export default function Collage() {
           />
         </motion.div>
 
-        <motion.div className="col-12 col-lg-4 undiv" style={{ y: colTwoTranslate }}>
+        <motion.div
+          className="col-12 col-lg-4 undiv"
+          style={{ y: colTwoTranslate }}
+        >
           <img
             src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/c5.jpg?alt=media&token=76a27e8d-3560-4c05-b965-f088df0db3ee"
             className="w-100 shadow-1-strong rounded mb-4"
@@ -89,7 +101,10 @@ export default function Collage() {
           />
         </motion.div>
 
-        <motion.div className="col-12 col-lg-4" style={{ y: colThreeTranslate }}>
+        <motion.div
+          className="col-12 col-lg-4"
+          style={{ y: colThreeTranslate }}
+        >
           <img
             src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/c3.jpg?alt=media&token=7836fc57-1e27-431d-b14e-370512c4f134"
             className="w-100 shadow-1-strong rounded mb-4"
@@ -101,12 +116,6 @@ export default function Collage() {
             onLoad={handleImageLoad}
           />
         </motion.div>
-      </div>
-
-      <div className="flex justify-end">
-        <Link className="bg-transparent text-blue-500 font-bold px-3" to="/gallery">
-          View More
-        </Link>
       </div>
     </div>
   );

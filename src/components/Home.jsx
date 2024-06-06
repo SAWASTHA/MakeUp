@@ -5,15 +5,15 @@ import Collage from './Collage';
 import Course_Home from './Course_Home';
 import CarouselImage from './Carousel';
 import transition from '../transaction';
-import DemoComponent from './demoComponent';
+import ParallexScroll from './ParallexScroll';
 
 
 function Home() {
   return (
     <div>
         <CarouselImage/>
-        <Collage/>
-        <DemoComponent/>
+        {/* <Collage/> */}
+        <ParallexScroll/>
         <Component/>
         <Course_Home/>
     </div>

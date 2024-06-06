@@ -1,12 +1,10 @@
-import { useRef,useEffect } from "react";
-import "./demo.css";
-import { useTransform, useScroll, motion } from "framer-motion";
+import { useRef, useEffect } from "react";
+import "../parallexScroll.css"
+import { useTransform, useScroll, motion, useAnimation } from "framer-motion";
 import React from "react";
-import Lenis from 'lenis'
 import useDimension from "../useDimension";
-import _debounce from 'lodash/debounce';
 
-export default function DemoComponent() {
+export default function ParallexScroll() {
   const images = [
     "https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/c1.jpg?alt=media&token=61abd7ed-a887-4e97-a8aa-ca6a077dc46e",
     "https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/cc4.jpg?alt=media&token=43ae79ea-1c62-4616-982f-76dc2226653b",
@@ -29,35 +27,45 @@ export default function DemoComponent() {
     offset: ["start end", "end start"]
   });
 
-  // useEffect(() => {
-  //   const lenis = new Lenis();
-
-  //   function raf(time) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-
-  //   requestAnimationFrame(raf);
-
-  //   return () => {
-  //     lenis.destroy(); // Cleanup resources
-  //   };
-  // }, []);
-
   const y1 = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
 
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start({ opacity: 1, transition: { duration: 1 } });
+        } else {
+          controls.start({ opacity: 0, transition: { duration: 1 } });
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (container.current) {
+      observer.observe(container.current);
+    }
+
+    return () => {
+      if (container.current) {
+        observer.unobserve(container.current);
+      }
+    };
+  }, [controls]);
+
   return (
-    <div>
-      <div ref={container} className="gallery">
+    <motion.div ref={container} className="scroll-container" animate={controls} initial={{ opacity: 0 }}>
+      <motion.div className="gallery">
         <Column images={[images[0], images[1], images[2]]} y={y1} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
         <Column images={[images[6], images[7], images[8]]} y={y3} />
         <Column images={[images[9], images[10], images[11]]} y={y4} />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

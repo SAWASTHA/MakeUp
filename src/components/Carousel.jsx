@@ -43,7 +43,7 @@ export default function CarouselImage() {
   }, [images]);
 
   return (
-    <Carousel plugins={[plugin.current]} className="w-full max-w-screen">
+    <Carousel plugins={[plugin.current]} className="w-full max-w-screen mb-lg-5">
       <CarouselContent className="flex">
         {images.map((image, index) => (
           <CarouselItem key={index} className="flex-shrink-0 relative w-full md:w-1/3">

@@ -1,70 +1,71 @@
 .custom-heading {
-    font-size: 3.8em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    
+  font-size: 3.8em;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .custom-text {
-    display: block;
-    margin-top: 10px;
-    font-size: 1.8em;
+  display: block;
+  margin-top: 10px;
+  font-size: 1.8em;
 }
-.back{
-    background-color: rgba(238, 238, 238, 0.867);
+.back {
+  background-color: rgba(238, 238, 238, 0.867);
 }
-.head{
-    font-size: 2.3em;
+.head {
+  font-size: 2.3em;
 }
 .custom-button {
-    width: 100%; 
-    box-sizing: border-box; 
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .rounded-bottom {
-    border-radius: 15px; 
+  border-radius: 15px;
 }
-.icon{
-    font-size: 1.8em;
+.icon {
+  font-size: 1.8em;
 }
-.add{
-    font-size: 20px;
+.add {
+  font-size: 20px;
 }
 
 .contact-page {
-    background-image: url('https://img.freepik.com/free-photo/makeup-cosmetic-products-collection-with-copy-space_23-2148301789.jpg?t=st=1716304817~exp=1716308417~hmac=d4470c6245d6801e560ddc74dbd5566ac967866abd6f62913d796f33ab9d8779&w=900');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-  }
-  
-  
-  .slide-in {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #0f0f0f;
-    transform-origin: bottom;
-  }
-  
-  .slide-out {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #0f0f0f;
-    transform-origin: top;
-  }
+  background-image: url("https://img.freepik.com/free-photo/makeup-cosmetic-products-collection-with-copy-space_23-2148301789.jpg?t=st=1716304817~exp=1716308417~hmac=d4470c6245d6801e560ddc74dbd5566ac967866abd6f62913d796f33ab9d8779&w=900");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
 
-  @media only screen and (max-width: 480px) {
+.slide-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  transform-origin: bottom;
+}
 
-    .undiv{
-    
-        display: none;
-    
-        }
-    }
+.slide-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  transform-origin: top;
+}
+
+@media only screen and (max-width: 480px) {
+  .undiv {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-container {
+    display: none;
+  }
+}
