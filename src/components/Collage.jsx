@@ -4,8 +4,11 @@ import { Skeleton } from "./ui/skeleton";
 import { Link } from "react-router-dom";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-export default function Collage() {
+export default function Collage(props) {
   const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  const images = props.images;
+  
 
   const { scrollYProgress } = useScroll();
   const colOneTranslate = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -74,12 +77,12 @@ export default function Collage() {
           style={{ y: colOneTranslate }}
         >
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/c1.jpg?alt=media&token=61abd7ed-a887-4e97-a8aa-ca6a077dc46e"
+            src={images[0]}
             className="w-100 shadow-1-strong rounded mb-4"
             onLoad={handleImageLoad}
           />
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/cc4.jpg?alt=media&token=43ae79ea-1c62-4616-982f-76dc2226653b"
+            src={images[1]}
             className="w-100 shadow-1-strong rounded mb-4"
             onLoad={handleImageLoad}
           />
@@ -90,12 +93,12 @@ export default function Collage() {
           style={{ y: colTwoTranslate }}
         >
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/c5.jpg?alt=media&token=76a27e8d-3560-4c05-b965-f088df0db3ee"
+            src={images[2]}
             className="w-100 shadow-1-strong rounded mb-4"
             onLoad={handleImageLoad}
           />
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/c6.jpg?alt=media&token=345488d2-163a-4455-bce0-24fd7cd6c10d"
+            src={images[3]}
             className="w-100 shadow-1-strong rounded mb-4"
             onLoad={handleImageLoad}
           />
@@ -106,12 +109,12 @@ export default function Collage() {
           style={{ y: colThreeTranslate }}
         >
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/c3.jpg?alt=media&token=7836fc57-1e27-431d-b14e-370512c4f134"
+            src={images[4]}
             className="w-100 shadow-1-strong rounded mb-4"
             onLoad={handleImageLoad}
           />
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/preetmakeup-4893b.appspot.com/o/collage1.jpg?alt=media&token=bb1943c4-659a-4511-9f8a-f9cb6e0a1749"
+            src={images[5]}
             className="w-100 shadow-1-strong rounded mb-4"
             onLoad={handleImageLoad}
           />
