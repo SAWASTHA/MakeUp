@@ -25,7 +25,7 @@ function Gallery() {
   ];
   return (
     <>
-    <GalleryCarousel/>
+    {/* <GalleryCarousel/> */}
     <Tabs value={activeTab} onValueChange={setActiveTab}>
       <div className="flex items-center justify-end mt-3 pe-3">
         <TabsList>

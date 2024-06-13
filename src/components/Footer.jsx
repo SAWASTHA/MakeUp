@@ -25,23 +25,24 @@ export default function Footer() {
 
         <Row className="justify-content-center mb-2">
           <Col xs="auto">
-            <a className="mx-4 hover:text-gray-400" href="#">
-              <IoLogoInstagram className="h-6 w-6" />
+            <a className="mx-4 hover:text-gray-400 " href="#">
+              <IoLogoInstagram className="h-6 w-6" style={{color:"pink"}} />
+              
             </a>
           </Col>
           <Col xs="auto">
             <a className="mx-4 hover:text-gray-400" href="#">
-              <FaWhatsapp className="h-6 w-6" />
+              <FaWhatsapp className="h-6 w-6" style={{color:"green"}}/>
             </a>
           </Col>
           <Col xs="auto">
             <a className="mx-4 hover:text-gray-400" href="#">
-              <FaPhoneAlt className="h-6 w-6" />
+              <FaPhoneAlt className="h-6 w-6" style={{color:"lightblue"}}/>
             </a>
           </Col>
           <Col xs="auto">
             <a className="mx-4 hover:text-gray-400" href="#">
-              <AiOutlineYoutube className="h-6 w-6" />
+              <AiOutlineYoutube className="h-6 w-6" style={{color:"red"}}/>
             </a>
           </Col>
         </Row>

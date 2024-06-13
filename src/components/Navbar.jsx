@@ -69,10 +69,11 @@ export default function NavbarComponent() {
 
   return (
     <header className="flex items-center justify-between w-full p-4 sm:px-6">
-      <div className="ml-2 sm:ml-4">
+     <div className="">
         <Link
           to="/"
-          className="text-1xl font-bold tracking-tighter sm:text-2xl md:text-3xl"
+          className="text-2xl font-bold tracking-tighter whitespace-nowrap"
+          style={{fontSize:'25px'}}
         >
           Preet Makeup
         </Link>
@@ -163,12 +164,15 @@ export default function NavbarComponent() {
         )}
       </nav>
       <div className="mx-4" style={{ width: "100px" }}></div>
-      <div className="sm:hidden mx-2">
+      {/* <div className="sm:hidden mx-2">
         <ComboboxDemo />
-      </div>
-      {user.name && <Profile />}
-      <div>
+      </div> */}
+      {/* {user.name && <Profile />} */}
+      <div className="mx-2">
         <ButtonIcon />
+      </div>
+      <div >
+      <Profile />
       </div>
     </header>
   );
