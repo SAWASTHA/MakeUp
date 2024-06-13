@@ -15,31 +15,37 @@ export default function Component() {
     [0, 1],
     ['scale(1.2)', 'scale(1)']
   );
-  const backgroundOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 1]);
   const contentTransform = useTransform(scrollYProgress, [0, 1], ['translateY(0)', 'translateY(-50%)']);
 
   const contentRef = useRef(null);
   const isInView = useInView(contentRef);
 
   return (
-    <section ref={container} className="relative w-full py-24 overflow-hidden" style={{maxHeight : '450px'}}>
+    <section ref={container} className="relative w-full py-24 overflow-hidden flex justify-center items-center" style={{ height: '600px', maxHeight: 'none' }}>
       <motion.div
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          height: '500px',
+          height: 'auto',
+          filter: 'blur(1px)',
           transform: backgroundTransform,
-          opacity: backgroundOpacity,
         }}
         className="absolute inset-0"
       />
-      <div className="absolute inset-0 bg-black-700/65 dark:bg-gray-800/70" />
+      <div className="absolute inset-0 bg-black bg-opacity-50" />
       <motion.div
         ref={contentRef}
-        style={{ transform: contentTransform }}
-        className="relative container px-4 md:px-6 text-center space-y-6 mt-5"
+        style={{
+          transform: contentTransform,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '100%',
+        }}
+        className="relative px-4 md:px-6 text-center space-y-6 mt-5"
       >
         <motion.h6
           initial={{ x: '-100vw' }}
@@ -53,8 +59,7 @@ export default function Component() {
           animate={isInView ? { x: 0, transition: { duration: 1, ease: 'easeInOut', delay: 0.2 } } : {}}
           className="max-w-[600px] mx-auto text-gray-300 md:text-xl"
         >
-          Discover our comprehensive makeup courses and unlock your true potential. From beginner to advanced, we've got
-          you covered.
+          Discover our comprehensive makeup courses and unlock your true potential. From beginner to advanced, we've got you covered.
         </motion.p>
         <motion.div
           initial={{ x: '-100vw' }}

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link } from "react-router-dom";
 import { IoLogoInstagram } from "react-icons/io5";
@@ -105,12 +106,12 @@ export default function Footer() {
             </p>
             <form className="flex flex-col sm:flex-row">
               <input
-                className="flex-1 bg-gray-800 border-none focus:ring-0 text-white px-3 py-2 placeholder-white-500 placeholder-opacity-50 mb-2 sm:mb-0"
+                className="flex-1 bg-gray-800 border-none focus:ring-0 text-white px-3 py-2 placeholder-white-500 placeholder-opacity-50 mb-2 me-1"
                 placeholder="Enter your email"
                 type="email"
               />
               <button
-                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 mx-2 mb-2 rounded"
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 mb-2 me-1"
                 type="submit"
               >
                 Subscribe

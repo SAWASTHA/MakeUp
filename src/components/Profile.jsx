@@ -156,7 +156,7 @@ export function Profile() {
         
         <SheetFooter>
           <SheetClose asChild>
-            {/* <Button type="button" onClick={handleLogout}>Logout</Button> */}
+            {/* {/ <Button type="button" onClick={handleLogout}>Logout</Button> /} */}
           </SheetClose>
         </SheetFooter>
       </SheetContent>

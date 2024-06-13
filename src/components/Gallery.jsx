@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import transition from "../transaction";
 import Collage from "./Collage";
-import { GalleryCarousel } from "./GalleryCarousel";
 
 function Gallery() {
   const [activeTab, setActiveTab] = useState("all");

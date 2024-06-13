@@ -142,3 +142,23 @@
     }
   }
   
+  /* Light Mode */
+::-webkit-scrollbar {
+  width: 18px;
+  height: 25px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 4px;
+}
+
+/* Dark Mode */
+.dark ::-webkit-scrollbar-thumb {
+  background: #ffffff;
+}
+

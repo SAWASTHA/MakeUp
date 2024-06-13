@@ -12,7 +12,6 @@ function Home() {
   return (
     <div>
         <CarouselImage/>
-        {/* <Collage/> */}
         <ParallexScroll/>
         <Component/>
         <Course_Home/>

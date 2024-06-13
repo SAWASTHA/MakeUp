@@ -11,7 +11,6 @@ import {
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
 import { ButtonIcon } from "./darkModeButton";
-import { ComboboxDemo } from "./PhoneMenu";
 import { Signin } from "./Signin";
 import { Profile } from "./Profile";
 import { UserContext } from "./context/UserContext";
@@ -69,11 +68,11 @@ export default function NavbarComponent() {
 
   return (
     <header className="flex items-center justify-between w-full p-4 sm:px-6">
-     <div className="">
+      <div className="">
         <Link
           to="/"
           className="text-2xl font-bold tracking-tighter whitespace-nowrap"
-          style={{fontSize:'25px'}}
+          style={{ fontSize: "25px" }}
         >
           Preet Makeup
         </Link>
@@ -164,15 +163,14 @@ export default function NavbarComponent() {
         )}
       </nav>
       <div className="mx-4" style={{ width: "100px" }}></div>
-      {/* <div className="sm:hidden mx-2">
-        <ComboboxDemo />
-      </div> */}
-      {/* {user.name && <Profile />} */}
-      <div className="mx-2">
-        <ButtonIcon />
-      </div>
-      <div >
-      <Profile />
+
+      <div className="flex items-stretch">
+        <div className="mx-2">
+          <ButtonIcon />
+        </div>
+        <div>
+          <Profile />
+        </div>
       </div>
     </header>
   );
